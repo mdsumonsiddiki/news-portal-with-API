@@ -32,10 +32,11 @@
                 </div>
             </div>
             <div class="flex items-center pt-4">
-                <input type="text" placeholder="Search here"
+                <input id="search-input" type="text" placeholder="Please enter 01--08 digit"
                     class=" border-4 text-xl py-5 px-3 rounded-l-xl border-[#1009db] w-full focus:outline-none" />
-                <button class="py-6 px-7 bg-[#1009db] text-xl text-white font-bold rounded-r-xl">Search</button>
+                <button onclick="searchBtn()" class="py-6 px-7 bg-[#1009db] text-xl text-white font-bold rounded-r-xl">Search</button>
             </div>
+            <p id="input-error"></p>
         </div>
     </header>
     <!-- main area -->
@@ -52,7 +53,9 @@
                 </div>
         </section>
         <section>
-            
+            <div id="looder" class="text-center hidden">
+                <span class="loading loading-spinner loading-lg"></span>
+            </div>
             <div id="news-container" class="space-y-8"></div>
         </section>
         <section id="empty-news" class=" hidden container">

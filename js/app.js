@@ -14,11 +14,15 @@ const getCatData = (catData) => {
 }
 
 const loadNews = async (catId) => {
+    const looder = document.getElementById('looder');
+    looder.classList.remove('hidden');
     const res = await fetch(`https://openapi.programming-hero.com/api/news/category/${catId}`);
     const newsData = await res.json();
     const data = newsData.data;
+    if(data.length > 0){
+        looder.classList.add('hidden');
+    }
     const emptyNews = document.getElementById('empty-news');
-    console.log(emptyNews.classList)
     if (data.length === 0) {
         emptyNews.classList.remove('hidden');
     }
@@ -28,25 +32,19 @@ const loadNews = async (catId) => {
     getNewsData(data)
 }
 const getNewsData = (newsData) => {
-
     const newsContainer = document.getElementById('news-container');
     newsContainer.innerHTML = '';
     newsData.forEach((newsItem) => {
         console.log()
         const newsDiv = document.createElement('div');
         newsDiv.innerHTML = `<div class="bg-white p-4 rounded-xl flex items-center gap-8 drop-shadow-xl">
-        <div class="w-6/12">
+        <div class="w-4/12">
             <img class="object-cover" src=${newsItem.image_url} alt="">
         </div>
-        <div>
+        <div class="w-8/12">
             <div>
                 <h2 class="text-[#121221] text-2xl font-bold">${newsItem.title}</h2>
-                <p class="text-[#949494] pt-2">From our favourite UK influencers to the best missives from
-                    Milan and the coolest New Yorkers, read on some of the best fashion blogs out there, and
-                    for even more inspiration, do head to our separate black fashion influencer round-up.
-                    Milan and the coolest New Yorkers, read on some of the best fashion blogs out there, and
-                    for even more inspiration, do head to our separate black fashion influencer round-up.
-                </p>
+                <p class="text-[#949494] pt-2">${newsItem.details.slice(0,300)}</p>
             </div>
             <div class="flex items-center justify-between pt-4">
                 <div class="flex items-center gap-3">
@@ -75,5 +73,18 @@ const getNewsData = (newsData) => {
         newsContainer.appendChild(newsDiv);
     })
 }
+
+const searchBtn = ()=>{
+    const inputError = document.getElementById('input-error');
+    const controlInput = document.getElementById('search-input');
+    const inputData = controlInput.value;
+    if(inputData){
+        loadNews(inputData)
+    }
+    else(
+        inputError.innerText='please inter 01 to 08 number'
+    )
+}
+
 loadNews('08')
 loadCat()
