@@ -10,22 +10,94 @@
 
 </head>
 
-<body>
+<body class="bg-[#F6F6F6]">
     <!-- header area -->
     <header class="container mx-auto pt-6">
         <!-- ===nav area=== -->
-        <nav>
+        <nav class="flex justify-between items-center border-b-2 pb-8">
             <div class="space-x-2">
-                <button class="btn btn-primary font-bold text-lg">News</button>
-                <button class="btn btn-primary font-bold text-lg">Portal</button>
+                <button class="btn btn-primary font-bold text-lg text-white">News</button>
+                <button class="btn btn-primary font-bold text-lg text-white">Portal</button>
             </div>
-            <div>
+            <div class="flex items-center gap-7">
                 <a href="#" class="text-xl font-bold hover:text-[#5D5FEF]">News</a>
                 <a href="#" class="text-xl font-bold hover:text-[#5D5FEF]">Blog</a>
+                <a href="#"><img src="images/user-pic.svg" alt=""></a>
             </div>
         </nav>
+        <!-- category area -->
+        <div>
+            <div class="py-8">
+                <div class="flex items-center justify-between">
+                    <button class="text-xl font-bold">Home</button>
+                    <button class="text-xl font-bold">Home</button>
+                    <button class="text-xl font-bold">Home</button>
+                    <button class="text-xl font-bold">Home</button>
+                </div>
+            </div>
+            <div class="flex items-center pt-4">
+                <input type="text" placeholder="Search here"
+                    class=" border-4 text-xl py-5 px-3 rounded-l-xl border-[#1009db] w-full focus:outline-none" />
+                <button class="py-6 px-7 bg-[#1009db] text-xl text-white font-bold rounded-r-xl">Search</button>
+            </div>
+        </div>
     </header>
-
+    <!-- main area -->
+    <main class="container mx-auto pt-12 pb-12">
+        <section class="pb-10">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center gap-3">
+                    <h3 class="text-xl font-bold">Sort By View:</h3>
+                    <h4>Default</h4>
+                </div>
+                <div class="space-x-3">
+                    <button class="bg-[#1009db] text-white py-1 px-3 rounded-lg text-lg">Today’s Pick</button>
+                    <button class="bg-[#1009db] text-white py-1 px-3 rounded-lg text-lg">Trending</button>
+                </div>
+        </section>
+        <section>
+            <div class="space-y-8">
+                <div class="bg-white p-4 rounded-xl flex items-center gap-8 drop-shadow-xl">
+                    <div>
+                        <img src="images/unsplash_EhTcC9sYXsw.svg" alt="">
+                    </div>
+                    <div>
+                        <div>
+                            <h2 class="text-[#121221] text-2xl font-bold">The best fashion influencers to follow for
+                                sartorial inspiration</h2>
+                            <p class="text-[#949494] pt-2">From our favourite UK influencers to the best missives from
+                                Milan and the coolest New Yorkers, read on some of the best fashion blogs out there, and
+                                for even more inspiration, do head to our separate black fashion influencer round-up.
+                            </p>
+                        </div>
+                        <div class="flex items-center justify-between pt-4">
+                            <div class="flex items-center gap-3">
+                                <img src="images/Rectangle 19.svg" alt="">
+                                <div>
+                                    <h4 class="text-[#2B2C34] font-medium text-lg">Jane Cooper</h4>
+                                    <p class="text-[#718797]">Jan 10, 2022 </p>
+                                </div>
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <img src="images/carbon_view.svg" alt="">
+                                <h3 class="text-xl text-[#515151] font-bold">1.5M</h3>
+                            </div>
+                            <div>
+                                <img src="images/Group 116134.svg" alt="">
+                            </div>
+                            <div>
+                                <img src="images/bi_arrow-right-short.svg" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <!-- footer area -->
+    <footer class="bg-white text-center pt-8">
+        <p>Copyright 2021 News Portal</p>
+    </footer>
 
     <script src="js/app.js"></script>
 </body>
